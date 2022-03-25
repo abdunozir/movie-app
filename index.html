@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./csses/slider.css" />
+    <link rel="stylesheet" href="./csses/comedySlider.css" />
+    <link rel="stylesheet" href="./csses/main.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid header-container">
+      <div class="slider-image">
+        <div class="inslider-image">
+          <img src="./images/Poster.png" alt="" />
+          <img src="./images/tv.png" alt="" />
+          <img src="./images/Poster.png" alt="" />
+          <img src="./images/tv.png" alt="" />
+          <img src="./images/Poster.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="container-fluid container-hero d-flex align-items-top justify-content-center"
+      >
+        <div class="container">
+          <nav
+            class="navbar navbar-expand-lg navbar-light"
+            style="background-color: none"
+          >
+            <div class="container-fluid">
+              <div class="logo">
+                <img src="./images/tv.png" alt="" /> <span>MuvieBox</span>
+              </div>
+              <form class="searchbar">
+                <input type="text" placeholder="Seach movie..." />
+                <i class="bi bi-search-heart"></i>
+              </form>
+              <div class="liked-muvies">
+                <button
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  class="btn btn-primary liked-btn"
+                >
+                  <i class="bi text-danger bi-suit-heart-fill"></i
+                  ><span>liked</span>
+                </button>
+              </div>
+            </div>
+          </nav>
+          <div
+            class="container-fluid d-flex align-items-center justify-content-space-between"
+            style="margin-top: 20%"
+          >
+            <div
+              class="container-fluid d-flex flex-column hero_muvie_about w-50"
+            >
+              <h6 class="d-flex flex-column prabellum fw-bold">
+                <span>john Wick 3:</span><span>Prabellum</span>
+              </h6>
+              <p class="card-text d-flex align-items-center text-white">
+                <i class="bi text-warning bi-star-fill"></i> 8.5
+                <span class="d-flex align-items-center m-2"
+                  ><i class="bx bx-globe"></i> ENGLISH
+                </span>
+              </p>
+              <h6
+                class="fw-500 text-white"
+                style="font-size: 14px; line-height: 18px"
+              >
+                John Wick is on the run after killing a member of the
+                international assassins' guild, and with a $14 million price tag
+                on his head, he is the target of hit men and women everywhere.
+              </h6>
+              <a
+                href="#"
+                class="btn btn-danger W-50 d-flex align-items-center justify-content-center gap-1"
+                style="font-size: 15px; width: 50%"
+                ><i class="bx bx-play" style="font-size: 12px"></i
+                ><span>WATCH TRAILER</span></a
+              >
+            </div>
+            <div
+              class="slider-btns w-50 d-flex align-items-center justify-content-end"
+            >
+              <div class="text-white" class="hero-slider-clicked">
+                <p class="one">1</p>
+                <p class="one">2</p>
+                <p class="one hero-slider">-3</p>
+                <p class="one">4</p>
+                <p class="one">5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="container-fluid">
+        
+      
+
+      <div
+        class="container-fluid align-items-center justify-content-center"
+        id="cards-container"
+      ></div>
+      <!-- modal -->
+      <div class="modal-container" onclick="closeModal()"></div>
+    </div>
+
+    <!-- liked sitebar -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Liked videos</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body"></div>
+    </div>
+    <script src="./js/normalized-movies.js"></script>
+    <script src="./js/cards.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/like.js"></script>
+    <script src="./js/comedySlider.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
