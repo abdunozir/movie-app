@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="./csses/slider.css" />
     <link rel="stylesheet" href="./csses/comedySlider.css" />
     <link rel="stylesheet" href="./csses/main.css" />
-
+    <link rel="stylesheet" href="./csses/searchpage/searchstyle.css">
     <title>Document</title>
   </head>
   <body>
@@ -35,16 +35,16 @@
       <div class="slider-image">
         <div class="inslider-image">
           <img src="./images/Poster.png" alt="" />
-          <img src="./images/tv.png" alt="" />
           <img src="./images/Poster.png" alt="" />
-          <img src="./images/tv.png" alt="" />
+          <img src="./images/Poster.png" alt="" />
+          <img src="./images/Poster.png" alt="" />
           <img src="./images/Poster.png" alt="" />
         </div>
       </div>
       <div
         class="container-fluid container-hero d-flex align-items-top justify-content-center"
       >
-        <div class="container">
+        <div class="container-xl">
           <nav
             class="navbar navbar-expand-lg navbar-light"
             style="background-color: none"
@@ -53,10 +53,18 @@
               <div class="logo">
                 <img src="./images/tv.png" alt="" /> <span>MuvieBox</span>
               </div>
-              <form class="searchbar">
-                <input type="text" placeholder="Seach movie..." />
-                <i class="bi bi-search-heart"></i>
+              <form onsubmit="preSub(event)" class="searchbar">
+                <input type="text"  class="top-search-input" list="movie-first-search-input"  placeholder="Seach movie..." />
+                <datalist id="movie-first-search-input">
+                  <option value="Chocolate">
+                  <option value="Coconut">
+                  <option value="Mint">
+                  <option value="Strawberry">
+                  <option value="Vanilla">
+              </datalist>
+                <span onclick="generalSearchSystem(event)"><i class="bi bi-search-heart"></i></span>
               </form>
+              
               <div class="liked-muvies">
                 <button
                   type="button"
@@ -70,6 +78,19 @@
                 </button>
               </div>
             </div>
+
+            <!-- search result is shown page here -->
+    <div class="container-searchresalt">
+      <div
+      class="text-white border-bottom modal-top d-flex align-items-center justify-content-space-between w-100"
+    >
+      <span>Search result</span>
+      <button onclick="searchResultClose()" class="text-white btn btn-danger"><i class="bi bi-x"></i></button>
+    </div>
+      <div class="container-fluid d-flex flex-wrap align-items-center justify-content-center search-field-panel">
+        
+      </div>
+    </div>
           </nav>
           <div
             class="container-fluid d-flex align-items-center justify-content-space-between"
@@ -78,38 +99,15 @@
             <div
               class="container-fluid d-flex flex-column hero_muvie_about w-50"
             >
-              <h6 class="d-flex flex-column prabellum fw-bold">
-                <span>john Wick 3:</span><span>Prabellum</span>
-              </h6>
-              <p class="card-text d-flex align-items-center text-white">
-                <i class="bi text-warning bi-star-fill"></i> 8.5
-                <span class="d-flex align-items-center m-2"
-                  ><i class="bx bx-globe"></i> ENGLISH
-                </span>
-              </p>
-              <h6
-                class="fw-500 text-white"
-                style="font-size: 14px; line-height: 18px"
-              >
-                John Wick is on the run after killing a member of the
-                international assassins' guild, and with a $14 million price tag
-                on his head, he is the target of hit men and women everywhere.
-              </h6>
-              <a
-                href="#"
-                class="btn btn-danger W-50 d-flex align-items-center justify-content-center gap-1"
-                style="font-size: 15px; width: 50%"
-                ><i class="bx bx-play" style="font-size: 12px"></i
-                ><span>WATCH TRAILER</span></a
-              >
+              
             </div>
             <div
               class="slider-btns w-50 d-flex align-items-center justify-content-end"
             >
               <div class="text-white" class="hero-slider-clicked">
-                <p class="one">1</p>
+                <p class="one hero-slider">1</p>
                 <p class="one">2</p>
-                <p class="one hero-slider">-3</p>
+                <p class="one ">3</p>
                 <p class="one">4</p>
                 <p class="one">5</p>
               </div>
@@ -118,15 +116,48 @@
         </div>
       </div>
     </div>
-    <div class="container d-flex align-items-center justify-content-center">
-      <div class="container-fluid">
-        
-      
+    <div class="container-xl d-flex flex-column align-items-center justify-content-center ">
+      <div class=" p-4 container-fluid row">
+        <div class=" w-25 col-3">
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Film name...">
+        </div>
+        <select class="form-select w-25 col-2 " aria-label="Default select example">
+          <option selected>All</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div class=" d-flex align-items-center col-2">
+          <input type="email" class="form-control col-2" id="exampleFormControlInput1" placeholder="Yildan...">
+        </div>
+        <div class="col-2">
+          <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="Yilgacha...">
+        </div>
+        <button class="btn btn-secondary col-2">Search</button>
+      </div>
 
+      <div class="container-fluid">
+        <div class="container-fluid">
+
+        </div>
+          <div class="container-fluid">
+
+          </div>
+      </div>
+
+
+    </div>
+
+    <div class="container-fluid d-flex align-items-center justify-content-center">
+      <div class="container-fluid">
       <div
-        class="container-fluid align-items-center justify-content-center"
+        class=" container-fluid align-items-center justify-content-center bg-dark p-3"
         id="cards-container"
+
       ></div>
+      <div class="">
+
+      </div>
       <!-- modal -->
       <div class="modal-container" onclick="closeModal()"></div>
     </div>
@@ -149,11 +180,16 @@
       </div>
       <div class="offcanvas-body"></div>
     </div>
+    
+
+
     <script src="./js/normalized-movies.js"></script>
     <script src="./js/cards.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/like.js"></script>
     <script src="./js/comedySlider.js"></script>
+    <script src="./js/sliderHero.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/searches/generalSearch.js"></script>
   </body>
 </html>

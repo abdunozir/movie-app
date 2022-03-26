@@ -10,14 +10,16 @@ for (let i = 0; i <= 30; i++) {
     category = '';
   }
   cards += `
-  <div class="card">
-          <div class="card m-1" style="width: 18rem">
+  
+          <div class="card m-2" style="width: 18rem">
             <div class="cardimg">
             <div class="trailar_like container p-2 d-flex align-items-center justify-content-space-between"> 
             <a class="badge" title="Tap to watch trailer"  data-bs-toggle="tooltip" data-bs-placement="top" style="text-decoration:none;" href=${movies[i].imdbPage}>Watch trailer</a>
-            <span  onclick='slikedCard(event)' ><i id="${movies[i].youtubeId}" class='bx bxs-heart bxs-heart-card' style="color:white;"></i></span>
+            <span  onclick='slikedCard(event)' ><i id="${movies[i].youtubeId}" class=' bx bxs-heart bxs-heart-card'></i></span>
             </div>
               <img
+              onclick="modalOpen(event)"
+              id=${movies[i].youtubeId}
                 src=${movies[i].youtubePoster}
                 class="card-img-top"
                 alt="muvie image"
@@ -38,6 +40,6 @@ for (let i = 0; i <= 30; i++) {
               <button onclick="modalOpen(event)" id=${movies[i].youtubeId} class="btn btn-primary">More info</button>
             </div>
           </div>
-        </div>`;
+       `;
 }
 cardsContainer.innerHTML = cards;
