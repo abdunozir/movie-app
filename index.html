@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./csses/slider.css" />
-    <link rel="stylesheet" href="./csses/comedySlider.css" />
+    <link rel="stylesheet" href="./csses/moreCards.css" />
     <link rel="stylesheet" href="./csses/main.css" />
     <link rel="stylesheet" href="./csses/searchpage/searchstyle.css">
     <title>Document</title>
@@ -53,7 +53,7 @@
               <div class="logo">
                 <img src="./images/tv.png" alt="" /> <span>MuvieBox</span>
               </div>
-              <form onsubmit="preSub(event)" class="searchbar">
+              <form onsubmit="preSub(event)" class="searchbar searchbar1">
                 <input type="text"  class="top-search-input" list="movie-first-search-input"  placeholder="Seach movie..." />
                 <datalist id="movie-first-search-input">
                   <option value="Chocolate">
@@ -62,7 +62,7 @@
                   <option value="Strawberry">
                   <option value="Vanilla">
               </datalist>
-                <span onclick="generalSearchSystem(event)"><i class="bi bi-search-heart"></i></span>
+                <span onclick="generalSearchSystem()"><i class="bi bi-search-heart"></i></span>
               </form>
               
               <div class="liked-muvies">
@@ -93,11 +93,10 @@
     </div>
           </nav>
           <div
-            class="container-fluid d-flex align-items-center justify-content-space-between"
-            style="margin-top: 20%"
+            class="here-slider-about-text container-fluid d-flex align-items-center justify-content-space-between"
           >
             <div
-              class="container-fluid d-flex flex-column hero_muvie_about w-50"
+              class="container-fluid d-flex flex-column hero_muvie_about "
             >
               
             </div>
@@ -118,22 +117,36 @@
     </div>
     <div class="container-xl d-flex flex-column align-items-center justify-content-center ">
       <div class=" p-4 container-fluid row">
-        <div class=" w-25 col-3">
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Film name...">
-        </div>
-        <select class="form-select w-25 col-2 " aria-label="Default select example">
-          <option selected>All</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <div class=" d-flex align-items-center col-2">
-          <input type="email" class="form-control col-2" id="exampleFormControlInput1" placeholder="Yildan...">
-        </div>
-        <div class="col-2">
-          <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="Yilgacha...">
-        </div>
-        <button class="btn btn-secondary col-2">Search</button>
+        <form class="row position-relative" onsubmit="func(event)">
+          <div class=" w-25 col-3">
+            <input type="search" class="form-control" required id="searchFormControlInput1" placeholder="Film name...">
+          </div>
+          <select class="form-select w-25 col-2" id="searchSelection" aria-label="Default select example">
+            <option selected>All</option>
+          
+          
+          </select>
+          <div class=" d-flex align-items-center col-2">
+            <input type="number" class="form-control col-2" required id="searchFormControlInput2" placeholder="Yildan...">
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control " id="searchFormControlInput3" placeholder="Yilgacha...">
+          </div>
+          <button  class="btn btn-secondary col-2" onclick="SPS_button()">Search</button>
+        
+          <!-- special search result -->
+          <div class="container-searchresalt1">
+            <div
+            class="text-white border-bottom modal-top d-flex align-items-center justify-content-space-between w-100"
+          >
+            <span>Search result</span>
+            <button onclick="SPS_searchResultClose()" class="text-white btn btn-danger"><i class="bi bi-x"></i></button>
+          </div>
+            <div class="container-fluid d-flex flex-wrap align-items-center justify-content-center search-field-panel1">
+              
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="container-fluid">
@@ -148,6 +161,7 @@
 
     </div>
 
+
     <div class="container-fluid d-flex align-items-center justify-content-center">
       <div class="container-fluid">
       <div
@@ -155,8 +169,14 @@
         id="cards-container"
 
       ></div>
-      <div class="">
-
+      <div class="morecards">
+        <div class="morcards-slider-container">
+          <span class="morebtn btn ">Pre</span>
+              <span class="morebtn btn btn-danger1">1</span>
+              <span class="morebtn btn ">3</span>
+              <span class="morebtn btn ">4</span>
+              <span class="morebtn btn ">Next</span>
+        </div>
       </div>
       <!-- modal -->
       <div class="modal-container" onclick="closeModal()"></div>
@@ -178,7 +198,20 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="offcanvas-body"></div>
+      <div class="offcanvas-body">
+        <form onsubmit="preSub(event)" class="searchbar searchbar2  border-dark w-100">
+          <input type="text"  class="text-black-50 top-search-input1 inliked_search" list="movie-first-search-input"  placeholder="Seach movie..." />
+          <datalist id="movie-first-search-input">
+            <option value="Chocolate">
+            <option value="Coconut">
+            <option value="Mint">
+            <option value="Strawberry">
+            <option value="Vanilla">
+        </datalist>
+          <span onclick="generalSearchSystem()"><i class="bi bi-search-heart text-black-50"></i></span>
+        </form>
+        <div class="offcanvas-body1 w-100"></div>
+      </div>
     </div>
     
 
@@ -187,9 +220,10 @@
     <script src="./js/cards.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/like.js"></script>
-    <script src="./js/comedySlider.js"></script>
+    <script src="./js/moreCards.js"></script>
     <script src="./js/sliderHero.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/searches/generalSearch.js"></script>
+    <script src="./js/searches/specialSearch.js"></script>
   </body>
 </html>

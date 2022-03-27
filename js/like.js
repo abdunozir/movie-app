@@ -1,4 +1,4 @@
-var offcanvasBody = document.querySelector('.offcanvas-body');
+var offcanvasBody = document.querySelector('.offcanvas-body1');
 var likeSpan = document.querySelector('.like-span');
 
 // liked cards variables
@@ -47,7 +47,7 @@ function slikedCard(e) {
         // already liked, remove from list
         likedcard.splice(likedcard.indexOf(item.youtubeId), 1);
         removeFromMarkedMovies(item.youtubeId);
-        // like color make red
+        // like color make white
         e.target.classList.remove('like-span');
       }
       console.log(likedcard);

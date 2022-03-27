@@ -1,0 +1,28 @@
+.morecards {
+  width: 200px;
+  /* background: #fff; */
+  margin-bottom: 20px;
+  /* overflow: auto; */
+  padding: 5px;
+}
+.morecards::-webkit-scrollbar {
+  display: none;
+}
+.morcards-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.morebtn {
+  background-color: #fff;
+}
+.btn-danger1 {
+  background-color: darkred;
+  color: white;
+}
+
+.btn-danger1:hover {
+  color: white;
+  transform: scale(1.1);
+}

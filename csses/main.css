@@ -37,11 +37,11 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 500%;
-  margin-top: -400vh;
+  margin-top: 400vh;
 }
 .inslider-image img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -58,7 +58,7 @@ body {
   /* line-height: 14px; */
 }
 
-.searchbar {
+.searchbar1 {
   width: 35%;
   border: 2px solid white;
   border-radius: 10px;
@@ -164,8 +164,8 @@ body {
   display: none;
 }
 .modal-content {
-  width: 80%;
-  height: 45%;
+  /* width: 80%;
+  height: 40%; */
   margin-top: 10%;
   display: flex;
   flex-direction: column;
@@ -183,9 +183,14 @@ body {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  overflow: auto;
   align-items: top;
   justify-content: space-between;
+}
+.modal-about::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px;
+  color: white;
+  background-color: yellow;
 }
 .strailer-modal {
   margin: 10px;
@@ -196,10 +201,47 @@ body {
 }
 .modal-about {
   width: 60%;
+  height: 200px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: top;
+}
+.hero_muvie_about {
+  width: 50%;
+}
+.hero_muvie_about .btn-danger {
+  width: 50%;
+}
+.here-slider-about-text {
+  margin-top: 20%;
+}
+@media (max-width: 992px) {
+  .modal-body-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-about {
+    width: 100%;
+  }
+  .strailer-modal {
+    width: 50%;
+  }
+  .hero_muvie_about {
+    width: 75%;
+  }
+  .hero_muvie_about .prabellum {
+    font-size: 20px;
+  }
+  .hero_muvie_about .btn-danger {
+    width: 100%;
+  }
+  .here-slider-about-text {
+    width: 100%;
+    margin-top: 40%;
+  }
 }
 
 /* liked card */

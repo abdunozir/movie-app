@@ -3,10 +3,9 @@ nav {
 }
 .container-searchresalt {
   position: absolute;
-  z-index: 100;
+  z-index: 10000;
   width: 100%;
   height: 70vh;
-
   top: 100%;
   background-color: rgb(29, 31, 32);
   display: flex;
@@ -18,4 +17,48 @@ nav {
 .search-field-panel {
   overflow: auto;
   height: 90%;
+}
+
+/* special search styles */
+
+.container-searchresalt1 {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 70vh;
+  top: 100%;
+  background-color: rgb(29, 31, 32);
+  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: top;
+  justify-content: top;
+}
+.searchbar2 {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.inliked_search {
+  width: 90%;
+  outline: none;
+  margin: 3px 2px;
+  border: none;
+  background: none;
+  color: white;
+}
+.searchbar2 .inliked_search::placeholder {
+  color: black;
+}
+
+@media (max-width: 760px) {
+  .searchbar2 {
+    display: flex;
+  }
+  .searchbar1 {
+    display: none;
+  }
 }

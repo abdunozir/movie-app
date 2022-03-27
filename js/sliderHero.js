@@ -12,7 +12,6 @@ hero_movie.text =
 //   onclick function to change the image of slider
 oneSliderNumer.forEach((item) => {
   item.addEventListener('click', () => {
-    console.log(item.innerHTML);
     const currentCorousel = document.querySelector('.hero-slider');
     currentCorousel.classList.remove('hero-slider');
 
@@ -55,7 +54,6 @@ oneSliderNumer.forEach((item) => {
     render();
   });
   // here slider image about text
-  console.log(hero_movie);
 
   function render() {
     hero_muvie_about.innerHTML = `
@@ -76,8 +74,8 @@ oneSliderNumer.forEach((item) => {
   </h6>
   <a
   href="#"
-  class="btn btn-danger W-50 d-flex align-items-center justify-content-center gap-1"
-  style="font-size: 15px; width: 50%"
+  class="btn btn-danger d-flex align-items-center justify-content-center gap-1"
+  style="font-size: 15px;"
   ><i class="bx bx-play" style="font-size: 12px"></i
   ><span>WATCH TRAILER</span></a
   >
