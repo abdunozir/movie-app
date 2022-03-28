@@ -52,7 +52,7 @@ function generalSearchFunction(inputclass) {
         // Search algorithm
         item.title
           .toLowerCase()
-          .includes(generalSearchInput1.value.toLowerCase())
+          .includes(generalSearchInput.value.toLowerCase())
       ) {
         searchResultCard += `
         <div class="card m-2" style="width: 18rem">

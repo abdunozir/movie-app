@@ -142,6 +142,10 @@ function SPS_button() {
 
 function SPS_searchResultClose() {
   container_searchresalt1.style.display = 'none';
+  searchFormControlInput1.value = '';
+  searchFormControlInput2.value = '';
+  searchFormControlInput3.value = '';
+  searchSelection.VALUE = '';
 }
 
 // PREVENT DEFAULT FUNCTION
