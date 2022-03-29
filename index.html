@@ -33,13 +33,7 @@
   <body>
     <div class="container-fluid header-container">
       <div class="slider-image">
-        <div class="inslider-image">
-          <img src="./images/Poster.png" alt="" />
-          <img src="./images/Poster.png" alt="" />
-          <img src="./images/Poster.png" alt="" />
-          <img src="./images/Poster.png" alt="" />
-          <img src="./images/Poster.png" alt="" />
-        </div>
+       
       </div>
       <div
         class="container-fluid container-hero d-flex align-items-top justify-content-center"
@@ -54,14 +48,8 @@
                 <img src="./images/tv.png" alt="" /> <span>MuvieBox</span>
               </div>
               <form onsubmit="preSub(event)" class="searchbar searchbar1">
-                <input type="text"  class="top-search-input" list="movie-first-search-input"  placeholder="Seach movie..." />
-                <datalist id="movie-first-search-input">
-                  <option value="Chocolate">
-                  <option value="Coconut">
-                  <option value="Mint">
-                  <option value="Strawberry">
-                  <option value="Vanilla">
-              </datalist>
+                <input type="text"  class="top-search-input"  placeholder="Seach movie..." />
+                
                 <span onclick="generalSearchSystem()"><i class="bi bi-search-heart"></i></span>
               </form>
               
@@ -93,7 +81,7 @@
     </div>
           </nav>
           <div
-            class="here-slider-about-text container-fluid d-flex align-items-center justify-content-space-between"
+            class="here-slider-about-text container-fluid "
           >
             <div
               class="container-fluid d-flex flex-column hero_muvie_about "
@@ -103,7 +91,7 @@
             <div
               class="slider-btns w-50 d-flex align-items-center justify-content-end"
             >
-              <div class="text-white" class="hero-slider-clicked">
+              <div class="text-white hero-slider-clicked" >
                 <p class="one hero-slider">1</p>
                 <p class="one">2</p>
                 <p class="one ">3</p>
@@ -149,13 +137,14 @@
         </form>
       </div>
 
-      <div class="container-fluid">
-        <div class="container-fluid">
-
-        </div>
-          <div class="container-fluid">
-
+      <div class="container-fluid  body-slider">
+        <div class="body-slider-container-main">
+          <div class="container-fluid body-slider-container">
           </div>
+          
+        </div>
+        <span class="bodyleftarr" onclick="bodyleftarr()"> <i class='bx bx-left-arrow-alt'></i> </span>
+        <span class="bodyrighttarr" onclick="bodyrighttarr()"> <i class='bx bx-right-arrow-alt' ></i> </span>
       </div>
 
 
@@ -171,12 +160,12 @@
       ></div>
       <div class="morecards">
         <div class="morcards-slider-container">
-          <span class="morebtn btn ">Pre</span>
+              <span class="morebtn btn ">Pre</span>
               <span class="morebtn btn btn-danger1">1</span>
+              <span class="morebtn btn ">2</span>
               <span class="morebtn btn ">3</span>
-              <span class="morebtn btn ">4</span>
               <span class="morebtn btn ">Next</span>
-        </div>
+            </div>
       </div>
       <!-- modal -->
       <div class="modal-container" onclick="closeModal()"></div>
@@ -200,14 +189,8 @@
       </div>
       <div class="offcanvas-body">
         <form onsubmit="preSub(event)" class="searchbar searchbar2  border-dark w-100">
-          <input type="text"  class="text-black-50 top-search-input1 inliked_search" list="movie-first-search-input"  placeholder="Seach movie..." />
-          <datalist id="movie-first-search-input">
-            <option value="Chocolate">
-            <option value="Coconut">
-            <option value="Mint">
-            <option value="Strawberry">
-            <option value="Vanilla">
-        </datalist>
+          <input type="text"  class="text-black-50 top-search-input1 inliked_search"   placeholder="Seach movie..." />
+          
           <span onclick="generalSearchSystem()"><i class="bi bi-search-heart text-black-50"></i></span>
         </form>
         <div class="offcanvas-body1 w-100"></div>
@@ -225,5 +208,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/searches/generalSearch.js"></script>
     <script src="./js/searches/specialSearch.js"></script>
+    <script src="./js/bodySlider.js"></script>
   </body>
 </html>

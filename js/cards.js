@@ -66,7 +66,7 @@ function showmoreCards() {
               <span class=" d-flex align-items-center m-2"><i class='bx bx-globe' ></i> ${movies[i].language} </span>
               </p>
               <p class="card-text ">
-             ${movies[i].categories[0]}, ${category}
+             ${movies[i].categories[0]}
               </p>
               <button onclick="modalOpen(event)" id=${movies[i].youtubeId} class="btn btn-primary">More info</button>
             </div>

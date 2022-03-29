@@ -22,7 +22,7 @@ function addToMarkedMovies(id) {
             <p class="card-text d-flex align-items-center " style="margin-top:0;">
             <i class="bi text-warning bi-star-fill"></i>${el.imdbRating}
             <span class=" d-flex align-items-center m-2"><i class='bx bx-globe' ></i> ${el.language}</span>
-            <span style="color:red;"  onclick='slikedCard(event)' ><i style="color:red;" id="${el.youtubeId}" class='bx bxs-heart bxs-heart-card' ></i></span>
+            <span style="color:red;"  onclick='dislike(event)' ><i style="color:red;" id="${el.youtubeId}" class='bx bxs-heart bxs-heart-card' ></i></span>
             </p>
           </div>
        </div>
@@ -32,6 +32,7 @@ function addToMarkedMovies(id) {
   });
 }
 
+let like_parents = [];
 // heat button click funcion
 function slikedCard(e) {
   // add liked list
@@ -43,14 +44,38 @@ function slikedCard(e) {
         addToMarkedMovies(item.youtubeId);
         // like color make red
         e.target.classList.add('like-span');
+
+        like_parents.push(
+          e.path[4].previousSibling.nextSibling.children[0].children[0]
+            .children[1].children[0]
+        );
+
+        // like_parents.push(e.path);
       } else {
+        like_parents.splice(
+          like_parents.indexOf(
+            e.path[4].previousSibling.nextSibling.children[0].children[0]
+              .children[1].children[0]
+          ),
+          1
+        );
         // already liked, remove from list
         likedcard.splice(likedcard.indexOf(item.youtubeId), 1);
         removeFromMarkedMovies(item.youtubeId);
         // like color make white
         e.target.classList.remove('like-span');
       }
-      console.log(likedcard);
+      // console.log(likedcard);
+    }
+  });
+}
+
+function dislike(e) {
+  like_parents.forEach((item) => {
+    if (item.id == e.target.id) {
+      item.classList.remove('like-span');
+      likedcard.splice(likedcard.indexOf(item.id), 1);
+      removeFromMarkedMovies(item.id);
     }
   });
 }

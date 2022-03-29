@@ -125,19 +125,37 @@ function SPS_finalFunction() {
     `;
   }
 }
+let ss_limit = 0;
+let first_value = '';
 // when button clicked
 function SPS_button() {
-  // yaar check function here
-  yearCheck();
+  first_value = searchFormControlInput1.value;
+  if (ss_limit == 0) {
+    // yaar check function here
+    yearCheck();
 
-  //   search as category function
-  searchAsCategory();
+    //   search as category function
+    searchAsCategory();
 
-  //   search as name
-  searchName();
+    //   search as name
+    searchName();
 
-  //   final function result
-  SPS_finalFunction();
+    //   final function result
+    SPS_finalFunction();
+  } else if (first_value !== searchFormControlInput1.value) {
+    // yaar check function here
+    yearCheck();
+
+    //   search as category function
+    searchAsCategory();
+
+    //   search as name
+    searchName();
+
+    //   final function result
+    SPS_finalFunction();
+  }
+  ss_limit++;
 }
 
 function SPS_searchResultClose() {
@@ -145,7 +163,8 @@ function SPS_searchResultClose() {
   searchFormControlInput1.value = '';
   searchFormControlInput2.value = '';
   searchFormControlInput3.value = '';
-  searchSelection.VALUE = '';
+  // searchSelection.value = '';
+  ss_limit = 0;
 }
 
 // PREVENT DEFAULT FUNCTION

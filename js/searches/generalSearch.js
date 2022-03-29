@@ -111,6 +111,7 @@ function searchResultClose() {
 function preSub(e) {
   e.preventDefault();
 }
+
 generalSearchInput.addEventListener('keyup', (e) => {
   if (e.keyCode == 13) {
     generalSearchFunction();

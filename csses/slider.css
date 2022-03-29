@@ -1,0 +1,89 @@
+.hero_muvie_about .hero1 {
+  /* height: 300px; */
+  width: 80%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.452);
+  padding: 20px;
+  border-radius: 10px;
+}
+.hero-slider-clicked {
+  background-color: rgba(0, 0, 0, 0.253);
+  padding: 5px;
+  border-radius: 10px;
+}
+.hero-film__about1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+}
+.hero__imdb-text {
+  padding-bottom: 0rem;
+  margin-bottom: 0;
+}
+.hero_muvie_about .hero1 .hero__title1 {
+  font-size: 30px;
+  color: white;
+}
+
+.hero__rating i {
+  color: gold;
+}
+
+.one {
+  transition: transform 0.5s;
+}
+
+/* body slider */
+.body-slider {
+  position: relative;
+}
+.bodyleftarr {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+  color: white;
+}
+.bodyleftarr:hover {
+  background-color: rebeccapurple;
+}
+.bodyrighttarr {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+  color: white;
+}
+.bodyrighttarr:hover {
+  background-color: rebeccapurple;
+}
+.body-slider-container-main {
+  overflow: auto;
+}
+.body-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120rem;
+  transition: all 0.5s;
+}
+.body-slider-container .card {
+  margin: 2rem;
+}
