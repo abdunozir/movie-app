@@ -9,6 +9,14 @@
   display: none;
 }
 .morcards-slider-container {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.pegnition-slider-container {
+  /* width: 200px; */
   display: flex;
   align-items: center;
   justify-content: space-between;

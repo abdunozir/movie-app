@@ -80,7 +80,7 @@ function searchName() {
 }
 
 function innerHTMLfunctionForFinalResult(item) {
-  SPS_searchResultCard = `
+  SPS_searchResultCard += `
         <div class="card m-2" style="width: 18rem">
           <div class="cardimg">
           <div class="trailar_like container p-2 d-flex align-items-center justify-content-space-between"> 
@@ -109,8 +109,10 @@ function innerHTMLfunctionForFinalResult(item) {
           </div>
         </div>
       `;
-  SPS_search_field_panel1.innerHTML += SPS_searchResultCard;
+
   //   console.log(SPS_search_field_panel1.innerHTML);
+  SPS_search_field_panel1.innerHTML = SPS_searchResultCard;
+
   container_searchresalt1.style.display = 'block';
 }
 
@@ -125,37 +127,24 @@ function SPS_finalFunction() {
     `;
   }
 }
-let ss_limit = 0;
-let first_value = '';
+
+SPS_searchResultCard = '';
+
+// SPS_searchResultCard = '';
+
 // when button clicked
 function SPS_button() {
-  first_value = searchFormControlInput1.value;
-  if (ss_limit == 0) {
-    // yaar check function here
-    yearCheck();
+  // yaar check function here
+  yearCheck();
 
-    //   search as category function
-    searchAsCategory();
+  //   search as category function
+  searchAsCategory();
 
-    //   search as name
-    searchName();
+  //   search as name
+  searchName();
 
-    //   final function result
-    SPS_finalFunction();
-  } else if (first_value !== searchFormControlInput1.value) {
-    // yaar check function here
-    yearCheck();
-
-    //   search as category function
-    searchAsCategory();
-
-    //   search as name
-    searchName();
-
-    //   final function result
-    SPS_finalFunction();
-  }
-  ss_limit++;
+  //   final function result
+  SPS_finalFunction();
 }
 
 function SPS_searchResultClose() {
@@ -164,7 +153,6 @@ function SPS_searchResultClose() {
   searchFormControlInput2.value = '';
   searchFormControlInput3.value = '';
   // searchSelection.value = '';
-  ss_limit = 0;
 }
 
 // PREVENT DEFAULT FUNCTION
